@@ -1,0 +1,25 @@
+
+<h1>Add Airline</h1>
+<form #userForm="ngForm" >
+<div class="input-group input-group-sm mb-3">
+    <label for="airname" class="control-label">Airline Name</label>
+    <input required #airname="ngModel" type="text" size="42" [(ngModel)]="airline.airname" name="airname"/>
+    <div *ngIf="airname.invalid && airname.touched" class="alert alert-danger">Airline name is required</div>
+</div>
+<div class="input-group input-group-sm mb-3">
+    <label for="airphone" class="control-label">Airline Phone</label>
+    <input required #airphone="ngModel" type="text"  size="42" [(ngModel)]="airline.airphone" name="airphone"/>
+    <div *ngIf="airphone.invalid && airphone.touched" class="alert alert-danger">Airline phone required</div>
+</div>
+<div class="input-group input-group-sm mb-3">
+    <label for="airaddress" class="control-label">Airline Address</label>
+    <input required #airaddress="ngModel" type="text" size="42" [(ngModel)]="airline.airaddress" name="airaddress"/>
+    <div *ngIf="airaddress.invalid && airaddress.touched" class="alert alert-danger">Airline Address is required</div>
+</div>
+
+
+<br/><br/>
+<button type="submit" [disabled]="!userForm.form.valid"  (click)="save()"  class="btn btn-dark">Submit</button>
+<button type="back" class="btn btn-dark"><a routerLink="/adminhome"  href="#">Back</a></button>
+</form> 
+

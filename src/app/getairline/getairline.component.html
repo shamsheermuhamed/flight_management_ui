@@ -1,0 +1,28 @@
+<br><br>
+<table >
+    <tr>
+        <th>AirLine name</th>
+        <th>Airline Phone</th>
+        <th>AirLine Address</th>
+    </tr>
+    <tr *ngFor= "let u of airline; index as i" >
+        <td >{{u.airname}}</td>
+        <td>{{u.airphone}}</td>
+        <td>{{u.airaddress}}</td>
+        <td><button>update</button></td>
+    </tr>
+</table>
+
+
+
+<!-- <ol>
+    <li *ngFor= "let u of airline; index as i" class="list-group-item">       
+        <span>{{u.airname | uppercase}}</span>
+        <br/>
+        <span>{{u.airphone}}</span>
+        <br>
+        <span>{{u.airaddress}}</span>
+
+    </li>
+</ol>
+ -->

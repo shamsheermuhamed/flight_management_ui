@@ -1,0 +1,37 @@
+<nav class="navbar navbar-dark bg-dark">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">Fly High</a>
+      <!-- <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button> -->
+      <div  id="navbarSupportedContent">
+        <ul class="list-group list-group-horizontal">
+          <li class="nav-item " >
+            <a routerLink="/" class="nav-link active" aria-current="page" href="#">Home</a>
+          </li>
+          <!-- <li class="nav-item">
+            <a routerLink="/adminhome" class="nav-link" href="#">adminhome</a>
+          </li>
+          <li class="nav-item">
+            <a routerLink="/userhome" class="nav-link" href="#">userhome</a>
+          </li> -->
+          <li class="nav-item">
+            <a routerLink="/login" *ngIf="!loggedIn" class="nav-link" href="#">login</a>
+          </li>
+          <li class="nav-item">
+            <a routerLink="/signup" *ngIf="!loggedIn" class="nav-link" href="#">Signup</a>
+          </li>
+          <!-- <li class="nav-item">
+           <button (click)="panel()"><a *ngIf="loggedIn" class="nav-link">Panel</a></button> 
+          </li> -->
+          <li class="nav-item">
+            <a  *ngIf="loggedIn" (click)="logOutUser()" class="nav-link" href="#">Logout</a>
+          </li>
+          
+        </ul>
+        
+      </div>
+    </div>
+  </nav>
+
+

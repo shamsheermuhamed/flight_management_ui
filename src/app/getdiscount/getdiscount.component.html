@@ -1,0 +1,12 @@
+<br><br>
+<table >
+    <tr>
+        <th>Coupon code</th>
+        <th>Discount Amount</th>
+    </tr>
+    <tr *ngFor= "let u of discount; index as i" >
+        <td >{{u.couponcode}}</td>
+        <td>{{u.discountamount}}</td>
+        <td><button>update</button></td>
+    </tr>
+</table>
