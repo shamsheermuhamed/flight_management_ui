@@ -22,7 +22,9 @@
             <a routerLink="/signup" *ngIf="!loggedIn" class="nav-link" href="#">Signup</a>
           </li>
           <!-- <li class="nav-item">
-           <button (click)="panel()"><a *ngIf="loggedIn" class="nav-link">Panel</a></button> 
+           <button (click)="panel()" *ngIf="loggedIn">
+             <a *ngIf="loggedIn" class="nav-link" href="panel()">Panel</a>
+            </button> 
           </li> -->
           <li class="nav-item">
             <a  *ngIf="loggedIn" (click)="logOutUser()" class="nav-link" href="#">Logout</a>

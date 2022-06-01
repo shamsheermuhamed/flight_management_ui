@@ -1,2 +1,46 @@
-<app-userhome></app-userhome>
-<p>book-ticket works!</p>
+<app-user-navbar></app-user-navbar>
+ticketid: number=0; passengers, userdetails,totalseats, totalprice
+passengername:string=""; passnegerage:number=0; passengergender:number=0;
+
+<h1>Book Ticket</h1>
+<form #ticketform="ngForm">
+
+    <div class="input-group input-group-sm mb-3">
+        <label for="passenegers" class="control-label">Passenegers</label>
+        <input required #input type="text" size="42" name="passengers" (keyup)="onKeyup(input.value)" />
+    </div>
+
+
+    <div *ngFor="let arr of array; index as i">
+        <div>
+            <input type="text" [(ngModel)]="ticket.passengers.passengername" placeholder="passengername"
+                name="passengername"><br>
+            <input type="text" placeholder="passnegerage" [(ngModel)]="ticket.passengers.passnegerage"
+                name="passenegerage"><br>
+            <input type="text" placeholder="passengergender" [(ngModel)]="ticket.passengers.passnegerage"
+                name="passengergender">
+        </div>
+    </div>
+    
+  
+
+
+
+
+
+
+    <!-- <div class="input-group input-group-sm mb-3">
+    <label for="couponcode" class="control-label">Coupon code</label>
+    <input required #couponcode="ngModel" type="text" size="42" [(ngModel)]="discount.couponcode" name="couponcode"/>
+    <div *ngIf="couponcode.invalid && couponcode.touched" class="alert alert-danger">Coupon code is required</div>
+</div>
+<div class="input-group input-group-sm mb-3">
+    <label for="discountamount" class="control-label">Discount Amount</label>
+    <input required #discountamount="ngModel" type="text"  size="42" [(ngModel)]="discount.discountamount" name="discountamount"/>
+    <div *ngIf="discountamount.invalid && discountamount.touched" class="alert alert-danger">Discount amount is required</div>
+</div> -->
+
+    <br /><br />
+    <button type="submit" [disabled]="!ticketform.form.valid" (click)="save()" class="btn btn-dark">Submit</button>
+    <button type="back" class="btn btn-dark"><a routerLink="/userhome" href="#">Back</a></button>
+</form>

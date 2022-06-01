@@ -12,8 +12,10 @@ export class HomeComponent implements OnInit {
   public isLoggedIn=false;
   constructor(private router: Router,private loginService:AuthenticationService) { }
 
+ 
+
   ngOnInit(): void {
-    // this.isLoggedIn=this.loginService.isLoggedin();
+    this.isLoggedIn=this.loginService.isLoggedin();
   }
  
 }

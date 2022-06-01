@@ -1,27 +1,41 @@
-<nav >
-    <div class="container-fluid">
-      <!-- <a class="navbar-brand" href="#">Fly High</a> -->
-      <div  id="navbarSupportedContent">
-        <ul class="list-group list-group-horizontal" type="none">
-          <li class="nav-item " >
-            <a routerLink="/userhome" class="nav-link active" aria-current="page" href="#">Home</a>
-          </li>
-          <li class="nav-item">
-            <a routerLink="/bookticket"  class="nav-link" href="#">Book Flight</a>
-          </li>
-          <li class="nav-item">
-            <a routerLink="/editticket" class="nav-link" href="#">Mananage Booking</a>
-          </li>
-        
-        <li class="nav-item">
-          <a routerLink="/getticket" class="nav-link" href="#">Booking History</a>
-        </li>
-          <!-- <li class="nav-item">
-           <button (click)="panel()"><a *ngIf="loggedIn" class="nav-link">Panel</a></button> 
-          </li> -->
+<app-user-navbar></app-user-navbar>
 
-        </ul>
-        
-      </div>
-    </div>
-  </nav>
+<form #userhomeform="ngForm">
+  <div class="input-group input-group-sm mb-3">
+    <label for="startplace" class="control-label">Start Place</label>
+    <input required #startplace="ngModel" type="text" size="10" [(ngModel)]="cred.startplace" name="startplace" />
+    <!-- <div *ngIf="startplace.invalid && startplace.touched" class="alert alert-danger">Coupon code is required</div> -->
+  </div>
+  <div class="input-group input-group-sm mb-3">
+    <label for="endplace" class="control-label">Destination</label>
+    <input required #endplace="ngModel" type="text" size="10" [(ngModel)]="cred.endplace" name="endplace" />
+    <!-- <div *ngIf="endplace.invalid && endplace.touched" class="alert alert-danger">Discount amount is required</div> -->
+  </div>
+  <div class="input-group input-group-sm mb-3">
+    <label for="Date" class="control-label">Date</label>
+    <input required #date="ngModel" type="Date" size="10" [(ngModel)]="date1" name="date" />
+    <!-- <div *ngIf="endplace.invalid && endplace.touched" class="alert alert-danger">Discount amount is required</div>  -->
+  </div> 
+  <br /><br />
+  <button type="submit" [disabled]="!userhomeform.form.valid" (click)="save()" class="btn btn-dark">Search</button>
+  <button type="back" class="btn btn-dark"><a routerLink="/userhome" href="#">Back</a></button>
+</form>
+
+
+<br><br>
+<table *ngIf="isreceive">
+    <tr>
+        <th>Flightid</th>
+        <th>Flight departure</th>
+        <th>Flight Arrival</th>
+        <th>Flight Price</th>
+    </tr>
+    <tr *ngFor= "let u of flight; index as i" >
+        <td >{{u.flightid}}</td>
+        <td>{{u.starttime}}</td>
+        <td>{{u.endtime}}</td>
+        <td>{{u.price}}</td>
+        <td><button mat-raised-button (click)="move(u.flightid)">Book Flight</button></td>
+
+    </tr>
+</table>

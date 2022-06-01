@@ -21,6 +21,7 @@ import { GetflightComponent } from './getflight/getflight.component';
 import { GetticketComponent } from './getticket/getticket.component';
 import { BookTicketComponent } from './book-ticket/book-ticket.component';
 import { UpdateTicketComponent } from './update-ticket/update-ticket.component';
+import { UserNavbarComponent } from './user-navbar/user-navbar.component';
 
 @NgModule({
   declarations: [
@@ -41,7 +42,8 @@ import { UpdateTicketComponent } from './update-ticket/update-ticket.component';
     GetflightComponent,
     GetticketComponent,
     BookTicketComponent,
-    UpdateTicketComponent
+    UpdateTicketComponent,
+    UserNavbarComponent
   ],
   imports: [
     BrowserModule,

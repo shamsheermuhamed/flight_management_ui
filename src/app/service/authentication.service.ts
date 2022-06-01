@@ -9,9 +9,11 @@ export class AuthenticationService {
 
   constructor(private httpClient: HttpClient) { }
 
+  cred:any;
   //for testing
   generateToken(credential:any){
     return this.httpClient.post("http://localhost:8088/signin",credential)
+
   }
 
   loginUser(token:any){
@@ -37,12 +39,15 @@ export class AuthenticationService {
     return localStorage.getItem("token");
   }
 
-
   signUp(user: {username:string,userpassword:string,useremail:string,role:string}) {
     
     return this.httpClient.post('http://localhost:8088/flight/users/add', user);
   }
 
+  getId(username:string)
+  {
+    return this.httpClient.get('http://localhost:8088/flight/users/getUserId/{username}');
+  }
 
 
   //Retrieves user token and checks authentication

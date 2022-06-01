@@ -10,6 +10,7 @@ flightid flightfrom, flightto, starttime,endtime, seats, price,status, airline:A
         <th>seats</th>
         <th>price</th>
         <th>status</th>
+        <!-- <th>airlinefull</th> -->
     </tr>
     <tr *ngFor= "let u of flight; index as i" >
         <td >{{u.flightid}}</td>
@@ -20,7 +21,8 @@ flightid flightfrom, flightto, starttime,endtime, seats, price,status, airline:A
         <td>{{u.seats}}</td>
         <td>{{u.price}}</td>
         <td>{{u.status}}</td>
-        <td>{{u.airlinefull.airname}}</td>
+        <!-- <td>{{u.status}}</td> -->
+        <!-- <td>{{u.airlinefull}}</td> -->
         <td><button>Edit</button></td>
     </tr>
 </table>

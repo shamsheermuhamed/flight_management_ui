@@ -1,6 +1,6 @@
 <section class="home">  
    <img width="100%" src="../../assets/airplane.jpg">
    <div class="homecontent">
-       <a routerLink="/login" class="btn btn-lg btn-primary">Get Started</a>
+       <a *ngIf="!isLoggedIn" routerLink="/login" class="btn btn-lg btn-primary">Get Started</a>
    </div>
 </section>

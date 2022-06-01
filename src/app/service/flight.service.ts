@@ -22,4 +22,8 @@ export class FlightService {
    getFlights(){
     return this.http.get("http://localhost:8089/flight/flights");
    }
+
+   getFlightsbyPlace(cred:{startplace:string,endplace:string}){
+    return this.http.post("http://localhost:8089/flight/flight/getFlightsbyPlace",cred);
+   }
 }
