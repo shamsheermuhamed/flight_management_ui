@@ -28,7 +28,12 @@ export class LoginComponent implements OnInit {
       (response:any)=>{
         this.loginservice.loginUser(response.token);
         console.log(response.token);
-        if(response.role==='ROLE_USER')window.location.href="/userhome";
+        // console.log(response.userid);
+        // console.log(response.role);
+        let x=response.userid;
+        console.log(x)
+        if(response.role==='ROLE_USER')
+         this.router.navigate(['userhome'],{state:{data:response.userid}})
         else window.location.href="/adminhome";
       },
       error=>{

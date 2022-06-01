@@ -22,6 +22,7 @@ import { GetticketComponent } from './getticket/getticket.component';
 import { BookTicketComponent } from './book-ticket/book-ticket.component';
 import { UpdateTicketComponent } from './update-ticket/update-ticket.component';
 import { UserNavbarComponent } from './user-navbar/user-navbar.component';
+import { PriceCalcComponent } from './price-calc/price-calc.component';
 
 @NgModule({
   declarations: [
@@ -43,7 +44,8 @@ import { UserNavbarComponent } from './user-navbar/user-navbar.component';
     GetticketComponent,
     BookTicketComponent,
     UpdateTicketComponent,
-    UserNavbarComponent
+    UserNavbarComponent,
+    PriceCalcComponent
   ],
   imports: [
     BrowserModule,

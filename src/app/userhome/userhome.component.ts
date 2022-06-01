@@ -1,6 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Flight } from '../Entity/flight';
+import User from '../Entity/user';
 import { FlightService } from '../service/flight.service';
 
 @Component({
@@ -10,13 +11,11 @@ import { FlightService } from '../service/flight.service';
 })
 export class UserhomeComponent implements OnInit {
 
-  @Input() 
-
   date1:Date=new Date();
   isreceive:boolean=false;
   cred:any={ startplace:"",endplace:""}
   flight:Flight[]=[];
-   
+  user:User=new User
   constructor(private flightService:FlightService,private router:Router, 
     private route:ActivatedRoute) { }
 
@@ -34,13 +33,14 @@ export class UserhomeComponent implements OnInit {
   {
      this.flight = response as Flight[]; 
   }
-  move(flightid:any)
+  move(flightId:any)
   {
-    this.router.navigate(['bookticket',flightid])
-    console.log(flightid);
+    this.router.navigate(['bookticket'],{state:{data:flightId,data1:this.user.userid}})
+    
   }
   ngOnInit(): void {
-  
+    console.log(history.state)
+    this.user.userid=history.state.data;
   }
 
 }

@@ -1,2 +1,16 @@
-<app-user-navbar></app-user-navbar>
-<p>getticket works!</p>
+<br><br>
+<table >
+    <tr>
+        <th>Ticket ID</th>
+        <th>Ticket Price</th>
+        <th>No of Seats</th>
+        <th>FlightID</th>
+    </tr>
+    <tr *ngFor= "let u of tickets; index as i" >
+        <td >{{u.ticketid}}</td>
+        <td>{{u.totalprice}}</td>
+        <td>{{u.totalseats}}</td>
+        <td>{{u.flightid}}</td>
+        <td><button>update</button></td>
+    </tr>
+</table>

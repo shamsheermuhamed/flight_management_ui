@@ -26,4 +26,7 @@ export class FlightService {
    getFlightsbyPlace(cred:{startplace:string,endplace:string}){
     return this.http.post("http://localhost:8089/flight/flight/getFlightsbyPlace",cred);
    }
+   getFlightsbyId(flightid:number){
+    return this.http.get("http://localhost:8089/flight/flight/{flightid}");
+   }
 }

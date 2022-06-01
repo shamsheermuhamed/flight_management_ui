@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit,Input } from '@angular/core';
 import Passeneger from '../Entity/passenger';
 import { Ticket } from '../Entity/ticket';
 import { TicketService } from '../service/ticket.service';
@@ -11,14 +11,16 @@ import { TicketService } from '../service/ticket.service';
 export class BookTicketComponent implements OnInit {
 
   ticket:Ticket=new Ticket
-  seats:number=0;
-  constructor(private ticketService:TicketService) { }
+  price:number=400;
+  i:number=0;
   array:number[]=[];
+  constructor(private ticketService:TicketService) { }
   
 
   save()
   {
-    this.ticket.totalseats=this.seats;
+    this.ticket.totalprice=this.price;
+    console.log(this.ticket)
     this.ticketService.createTicket(this.ticket).subscribe(
       response=>{
         console.log(response);
@@ -26,18 +28,22 @@ export class BookTicketComponent implements OnInit {
     )
   }
 
-  onKeyup(value:any)
-  {
-    for(let i=0;i<value;i++)
-    {
-      this.array.push(i);
-
-    }
-          this.seats=value;
-  }
+ 
   ngOnInit(): void {
-    this.array=[]
+    console.log(history.state)
+    this.ticket.flightid=history.state.data;
+    this.ticket.userdetails=history.state.data1;
   }
-
+  
+   // onKeyup(value:any)
+  // {
+  //   for(let i=0;i<value;i++)
+  //   {
+  //     this.array.push(i);
+  //     console.log()
+  //   }
+  //         this.seats=value;
+  //         console.log(this.ticket.flightid)
+  // }
 
 }
