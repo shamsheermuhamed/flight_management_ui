@@ -13,10 +13,12 @@ export class TicketService {
     totalprice:number,flightid:number}){
    return this.http.post("http://localhost:8088/flight/tickets/create",ticket);
   }
-  updateticket(ticket:Ticket){
-    return this.http.post("http://localhost:8088/flight/tickets/update",ticket);
+  cancelTicket(ticketid:any){
+    return this.http.delete("http://localhost:8088/flight/tickets/delete/"+ticketid);
    }
-   getTicket(){
-    return this.http.get("http://localhost:8088/flight/tickets");
+
+   getTicketById(userid:any)
+   {
+    return this.http.get("http://localhost:8088/flight/tickets/"+userid);
    }
 }

@@ -1,4 +1,9 @@
+<app-user-navbar></app-user-navbar>
+<body background="./assets/watercolor.webp">
 <br><br>
+<div class="row">
+    <div class="card col-md-4 offset-md-4 shadow-lg p-3 mb-5 bg-white">
+        <div class="container text-center mt">
 <table >
     <tr>
         <th>Ticket ID</th>
@@ -11,6 +16,8 @@
         <td>{{u.totalprice}}</td>
         <td>{{u.totalseats}}</td>
         <td>{{u.flightid}}</td>
-        <td><button>update</button></td>
+        <td><button (click)="cancelTicket(u.ticketid)">Cancel</button></td>
     </tr>
 </table>
+</div></div></div>
+</body>

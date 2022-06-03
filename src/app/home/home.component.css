@@ -5,3 +5,10 @@
     left:50%;
     transform: translate(-50%,-50%);
 }
+
+.groupBookingCard.collapsed {
+    padding: 8px 8px 16px;
+}
+img{
+    object-fit:contain;
+}

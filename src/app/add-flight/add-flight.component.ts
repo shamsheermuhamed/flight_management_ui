@@ -17,6 +17,10 @@ export class AddFlightComponent implements OnInit {
     this.flightService.addFlight(this.flight).subscribe(
       (response)=>{
         console.log(response);
+        alert("Successfully added")
+      },
+      error=>{
+        console.log(error)
       }
     )
   }

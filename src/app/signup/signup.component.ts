@@ -30,6 +30,8 @@ export class SignupComponent implements OnInit {
     this.loginservice.signUp(this.user).subscribe(
       (response: any) => {
         console.log(response.message);
+        alert(response.message)
+        this.user=new User;
       },
       error=>{
         alert(error.error.message);

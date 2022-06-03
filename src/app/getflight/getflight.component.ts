@@ -23,4 +23,12 @@ export class GetflightComponent implements OnInit {
     })
   }
 
+  deleteFlight(flightid:any)
+  {
+    this.flightService.deleteFlightById(flightid).subscribe(
+      response=>{
+        alert("successfully deleted")
+      }
+    );
+  }
 }

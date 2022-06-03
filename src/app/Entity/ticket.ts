@@ -9,4 +9,5 @@ export class Ticket {
     pnr:number=0;
     totalprice:number=0;
     flightid:number=0;
+    coupon:string=""
 }

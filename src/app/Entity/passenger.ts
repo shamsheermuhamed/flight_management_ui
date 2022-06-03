@@ -1,7 +1,7 @@
-export default class Passeneger{    
+export default class Passenger{    
     // passenegrid:number=0;
     passengername:string="";
-    passnegerage:number=0;
+    passengerage:number=0;
     passengergender:number=0;
 
 }

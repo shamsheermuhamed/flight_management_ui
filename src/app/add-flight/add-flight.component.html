@@ -1,45 +1,75 @@
-flightid flightfrom, flightto, starttime,endtime, seats, price,status, airline:Airline
+<!-- flightid flightfrom, flightto, starttime,endtime, seats, price,status, airline:Airline -->
 
-<h1>Add Discount</h1>
-<form #flightform="ngForm" >
-<div class="input-group input-group-sm mb-3">
-    <label for="flighid" class="control-label">Flight Id</label>
-    <input required #flightid="ngModel" type="text" size="42" [(ngModel)]="flight.flightid" name="flightid"/>
-    <div *ngIf="flightid.invalid && flightid.touched" class="alert alert-danger">Flight Id required</div>
-</div>
-<div class="input-group input-group-sm mb-3">
-    <label for="flight" class="control-label">Start Place</label>
-    <input required #flightfrom="ngModel" type="text" size="42" [(ngModel)]="flight.flightfrom" name="flightfrom"/>
-    <div *ngIf="flightfrom.invalid && flightfrom.touched" class="alert alert-danger">Start Place is required</div>
-</div>
-<div class="input-group input-group-sm mb-3">
-    <label for="flightto" class="control-label">End Place</label>
-    <input required #flightto="ngModel" type="text" size="42" [(ngModel)]="flight.flightto" name="flightto"/>
-    <div *ngIf="flightto.invalid && flightto.touched" class="alert alert-danger">End place is required</div>
-</div>
-<div class="input-group input-group-sm mb-3">
-    <label for="starttime" class="control-label">Departure Time</label>
-    <input required #starttime="ngModel" type="time" size="42" [(ngModel)]="flight.starttime" name="starttime"/>
-    <div *ngIf="starttime.invalid && starttime.touched" class="alert alert-danger">Starttime is required</div>
-</div>
-<div class="input-group input-group-sm mb-3">
-    <label for="endtime" class="control-label">Arrival Time</label>
-    <input required #endtime="ngModel" type="time" size="42" [(ngModel)]="flight.endtime" name="endtime"/>
-    <div *ngIf="endtime.invalid && endtime.touched" class="alert alert-danger">EndTime is required</div>
-</div>
+<body background="../assets/watercolor.webp">
+    <div class="row">
+        <div class="card col-md-4 offset-md-4 shadow-lg p-3 mb-5 bg-white">
+            <div class="container text-center mt">
+                <h4>Add Discount</h4>
+                <form #flightform="ngForm">
+                    <div class="row">
+                        <label for="flighid" class="control-label">Flight Id</label>
+                        <input required #flightid="ngModel" type="text"  [(ngModel)]="flight.flightid"
+                            name="flightid" />
+                        <div *ngIf="flightid.invalid && flightid.touched" class="alert alert-danger">Flight Id required
+                        </div>
+                    </div>
+                    <div class="row">
+                        <label for="flight" class="control-label">Start Place</label>
+                        <input required #flightfrom="ngModel" type="text" [(ngModel)]="flight.flightfrom"
+                            name="flightfrom" />
+                        <div *ngIf="flightfrom.invalid && flightfrom.touched" class="alert alert-danger">Start Place is
+                            required</div>
+                    </div>
+                    <div class="row">
+                        <label for="flightto" class="control-label">End Place</label>
+                        <input required #flightto="ngModel" type="text" [(ngModel)]="flight.flightto"
+                            name="flightto" />
+                        <div *ngIf="flightto.invalid && flightto.touched" class="alert alert-danger">End place is
+                            required</div>
+                    </div>
+                    <div class="row">
+                        <label for="starttime" class="control-label">Departure Time</label>
+                        <input required #starttime="ngModel" type="time"  [(ngModel)]="flight.starttime"
+                            name="starttime" />
+                        <div *ngIf="starttime.invalid && starttime.touched" class="alert alert-danger">Starttime is
+                            required</div>
+                    </div>
+                    <div class="row">
+                        <label for="endtime" class="control-label">Arrival Time</label>
+                        <input required #endtime="ngModel" type="time"  [(ngModel)]="flight.endtime"
+                            name="endtime" />
+                        <div *ngIf="endtime.invalid && endtime.touched" class="alert alert-danger">EndTime is required
+                        </div>
+                    </div>
 
-<div class="input-group input-group-sm mb-3">
-    <label for="seats" class="control-label">Seats</label>
-    <input required #seats="ngModel" type="text" size="42" [(ngModel)]="flight.seats" name="seats"/>
-    <div *ngIf="seats.invalid && seats.touched" class="alert alert-danger">No of seats required</div>
-</div>
-<div class="input-group input-group-sm mb-3">
-    <label for="airline" class="control-label">Airline name</label>
-    <input required #airline="ngModel" type="text" size="42" [(ngModel)]="flight.airline" name="airline"/>
-    <div *ngIf="airline.invalid && airline.touched" class="alert alert-danger">Airline name is required</div>
-</div>
+                    <div class="row">
+                        <label for="seats" class="control-label">Seats</label>
+                        <input required #seats="ngModel" type="text"  [(ngModel)]="flight.seats"
+                            name="seats" />
+                        <div *ngIf="seats.invalid && seats.touched" class="alert alert-danger">No of seats required
+                        </div>
+                    </div>
 
-<br/><br/>
-<button type="submit" [disabled]="!flightform.form.valid"  (click)="save()"  class="btn btn-dark">Submit</button>
-<button type="back" class="btn btn-dark"><a routerLink="/adminhome"  href="#">Back</a></button>
-</form> 
+                    <div class="row">
+                        <label for="price" class="control-label">Price</label>
+                        <input required #price="ngModel" type="text"  [(ngModel)]="flight.price"
+                            name="seats" />
+                        <div *ngIf="price.invalid && price.touched" class="alert alert-danger">Price required</div>
+                    </div>
+                    <div class="row">
+                        <label for="airline" class="control-label">Airline name</label>
+                        <input required #airline="ngModel" type="text"  [(ngModel)]="flight.airline"
+                            name="airline" />
+                        <div *ngIf="airline.invalid && airline.touched" class="alert alert-danger">Airline name is
+                            required</div>
+                    </div>
+
+                    <br /><br />
+                    <button type="submit" [disabled]="!flightform.form.valid" (click)="save()"
+                        class="btn btn-dark">Submit</button>
+                    <button type="back" class="btn btn-dark"><a routerLink="/adminhome" href="#">Back</a></button>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>

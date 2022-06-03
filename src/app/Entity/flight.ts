@@ -9,7 +9,7 @@ export class Flight {
     endtime:string="";
     seats:number=0;
     price:number=0;
-    status:boolean=false;
+    status:boolean=true;
     airline:string="";
     airlinefull:Airline=new Airline
     

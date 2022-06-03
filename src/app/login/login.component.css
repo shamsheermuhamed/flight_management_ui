@@ -1,6 +1,6 @@
 .wrapper{
     min-height: 90vh;
-    padding-top: 100px;
+    padding-top: 20px;
     padding-bottom: 100px;
   }
   .row{
@@ -34,4 +34,7 @@
   a:hover{
     text-decoration: none;
   }
-  
+
+  body{
+    /* :  url('./assets/airplane.jpg'); */
+  }

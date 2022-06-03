@@ -16,7 +16,7 @@
             <a routerLink="/userhome" class="nav-link" href="#">userhome</a>
           </li> -->
           <li class="nav-item">
-            <a routerLink="/login" *ngIf="!loggedIn" class="nav-link" href="#">login</a>
+            <a *ngIf="!loggedIn" routerLink="/login"  class="nav-link" href="#">login</a>
           </li>
           <li class="nav-item">
             <a routerLink="/signup" *ngIf="!loggedIn" class="nav-link" href="#">Signup</a>

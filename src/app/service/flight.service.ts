@@ -27,6 +27,11 @@ export class FlightService {
     return this.http.post("http://localhost:8089/flight/flight/getFlightsbyPlace",cred);
    }
    getFlightsbyId(flightid:number){
-    return this.http.get("http://localhost:8089/flight/flight/{flightid}");
+    return this.http.get("http://localhost:8089/flight/flight/"+flightid);
+   }
+
+   deleteFlightById(flightid:any)
+   {
+      return this.http.delete("http://localhost:8089/flight/delete/"+flightid)
    }
 }

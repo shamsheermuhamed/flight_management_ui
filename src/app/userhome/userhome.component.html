@@ -1,43 +1,51 @@
 <app-user-navbar></app-user-navbar>
 
-<form #userhomeform="ngForm">
-  <div class="input-group input-group-sm mb-3">
-    <label for="startplace" class="control-label">Start Place</label>
-    <input required #startplace="ngModel" type="text" size="10" [(ngModel)]="cred.startplace" name="startplace" />
-    <!-- <div *ngIf="startplace.invalid && startplace.touched" class="alert alert-danger">Coupon code is required</div> -->
+<body background="./assets/watercolor.webp">
+  <br><br>
+  <form #userhomeform="ngForm">
+    <div class="container-fluid">
+      <div align="left">
+        <label for="startplace" class="control-label">Start Place</label>
+        <input required #startplace="ngModel" type="text" size="10" [(ngModel)]="cred.startplace" name="startplace" />
+        <!-- <div *ngIf="startplace.invalid && startplace.touched" class="alert alert-danger">Coupon code is required</div> -->
+      </div>
+      <div align="center">
+        <label for="endplace" class="control-label">Destination</label>
+        <input required #endplace="ngModel" type="text" size="10" [(ngModel)]="cred.endplace" name="endplace" />
+        <!-- <div *ngIf="endplace.invalid && endplace.touched" class="alert alert-danger">Discount amount is required</div> -->
+      </div>
+      <div class="input-group input-group-sm mb-3">
+        <label for="Date" class="control-label">Date</label>
+        <input required #date="ngModel" type="Date" size="10" [(ngModel)]="date1" name="date" />
+        <!-- <div *ngIf="endplace.invalid && endplace.touched" class="alert alert-danger">Discount amount is required</div>  -->
+      </div>
+      <br>
+      <button type="submit" [disabled]="!userhomeform.form.valid" (click)="save()" class="btn btn-dark">Search</button>
+    </div>
+  </form>
+
+
+  <br><br>
+  <div class="row" *ngIf="isreceive" align="center">
+      <div class="container text-center mt">
+        <table>
+          <tr>
+            <th>Flightid</th>
+            <th>Flight departure</th>
+            <th>Flight Arrival</th>
+            <th>Flight Price</th>
+          </tr>
+          <tr *ngFor="let u of flight; index as i">
+            <td>{{u.flightid}}</td>
+            <td>{{u.starttime}}</td>
+            <td>{{u.endtime}}</td>
+            <td>{{u.price}}</td>
+            <td><button mat-raised-button (click)="move(u.flightid)">Book Flight</button></td>
+
+          </tr>
+        </table>
+      </div>
+    
   </div>
-  <div class="input-group input-group-sm mb-3">
-    <label for="endplace" class="control-label">Destination</label>
-    <input required #endplace="ngModel" type="text" size="10" [(ngModel)]="cred.endplace" name="endplace" />
-    <!-- <div *ngIf="endplace.invalid && endplace.touched" class="alert alert-danger">Discount amount is required</div> -->
-  </div>
-  <div class="input-group input-group-sm mb-3">
-    <label for="Date" class="control-label">Date</label>
-    <input required #date="ngModel" type="Date" size="10" [(ngModel)]="date1" name="date" />
-    <!-- <div *ngIf="endplace.invalid && endplace.touched" class="alert alert-danger">Discount amount is required</div>  -->
-  </div> 
-  <br /><br />
-  <button type="submit" [disabled]="!userhomeform.form.valid" (click)="save()" class="btn btn-dark">Search</button>
-  <button type="back" class="btn btn-dark"><a routerLink="/userhome" href="#">Back</a></button>
-</form>
-
-
-<br><br>
-<table *ngIf="isreceive">
-    <tr>
-        <th>Flightid</th>
-        <th>Flight departure</th>
-        <th>Flight Arrival</th>
-        <th>Flight Price</th>
-    </tr>
-    <tr *ngFor= "let u of flight; index as i" >
-        <td >{{u.flightid}}</td>
-        <td>{{u.starttime}}</td>
-        <td>{{u.endtime}}</td>
-        <td>{{u.price}}</td>
-        <td><button mat-raised-button (click)="move(u.flightid)">Book Flight</button></td>
-        
-    </tr>
-</table>
-
+</body>
 <!-- <app-book-ticket [flightid]="flightId"></app-book-ticket> -->

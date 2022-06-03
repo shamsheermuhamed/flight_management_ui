@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import User from '../Entity/user';
-const url= 'http://localhost:8088/';
+const url= 'http://localhost:8088/flight';
 @Injectable({
   providedIn: 'root'
 })
@@ -12,7 +12,7 @@ export class AuthenticationService {
   cred:any;
   //for testing
   generateToken(credential:any){
-    return this.httpClient.post("http://localhost:8088/signin",credential)
+    return this.httpClient.post(url+"/signin",credential)
 
   }
 
@@ -41,12 +41,12 @@ export class AuthenticationService {
 
   signUp(user: {username:string,userpassword:string,useremail:string,role:string}) {
     
-    return this.httpClient.post('http://localhost:8088/flight/users/add', user);
+    return this.httpClient.post(url+'/users/add', user);
   }
 
   getId(username:string)
   {
-    return this.httpClient.get('http://localhost:8088/flight/users/getUserId/{username}');
+    return this.httpClient.get(url+'/users/getUserId/'+username);
   }
 
 

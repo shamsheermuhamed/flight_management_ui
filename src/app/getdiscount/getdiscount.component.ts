@@ -20,5 +20,14 @@ export class GetdiscountComponent implements OnInit {
       this.discount = response as Discount[]; 
     })
   }
+  
+  deleteById(couponcode:any)
+  {
+      this.discountService.deleteCouponByCode(couponcode).subscribe(
+        response=>{
+          console.log(response);
+        }
+      )
+  }
 
 }

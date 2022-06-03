@@ -14,11 +14,13 @@ import { LoginComponent } from './login/login.component';
 import { AuthGuard } from './service/auth.guard';
 import { SignupComponent } from './signup/signup.component';
 import { UpdateTicketComponent } from './update-ticket/update-ticket.component';
+import { UserNavbarComponent } from './user-navbar/user-navbar.component';
 import { UserhomeComponent } from './userhome/userhome.component';
 
 const routes: Routes = [
   {path:"",component:HomeComponent},
   {path:"adminhome", component:AdminhomeComponent,canActivate:[AuthGuard]},
+  {path:"usernavbar",component:UserNavbarComponent, canActivate:[AuthGuard]},
   {path:"login", component:LoginComponent},
   {path:"signup", component:SignupComponent},
   {path:"userhome", component:UserhomeComponent,pathMatch:"full",canActivate:[AuthGuard]},

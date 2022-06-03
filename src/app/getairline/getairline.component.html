@@ -1,18 +1,25 @@
-<br><br>
-<table >
-    <tr>
-        <th>AirLine name</th>
-        <th>Airline Phone</th>
-        <th>AirLine Address</th>
-    </tr>
-    <tr *ngFor= "let u of airline; index as i" >
-        <td >{{u.airname}}</td>
-        <td>{{u.airphone}}</td>
-        <td>{{u.airaddress}}</td>
-        <td><button>update</button></td>
-    </tr>
-</table>
-
+<body background="./assets/watercolor.webp">
+    <div class="row">
+        <div class="card col-md-4 offset-md-4 shadow-lg p-3 mb-5 bg-white">
+            <div class="container text-center mt">
+                <table>
+                    <tr>
+                        <th>AirLine name</th>
+                        <th>Airline Phone</th>
+                        <th>AirLine Address</th>
+                    </tr>
+                    <tr *ngFor="let u of airline; index as i">
+                        <td>{{u.airname}}</td>
+                        <td>{{u.airphone}}</td>
+                        <td>{{u.airaddress}}</td>
+                        <td><button>update</button></td>
+                    </tr>
+                </table>
+                <button type="back" class="btn btn-dark"><a routerLink="/adminhome" href="#">Back</a></button>
+            </div>
+        </div>
+    </div>
+</body>
 
 
 <!-- <ol>

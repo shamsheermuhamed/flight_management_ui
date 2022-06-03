@@ -35,7 +35,7 @@ export class UserhomeComponent implements OnInit {
   }
   move(flightId:any)
   {
-    this.router.navigate(['bookticket'],{state:{data:flightId,data1:this.user.userid}})
+    this.router.navigate(['bookticket'],{state:{flightdata:flightId,data:this.user.userid}})
     
   }
   ngOnInit(): void {

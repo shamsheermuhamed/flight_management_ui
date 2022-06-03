@@ -10,14 +10,16 @@ import { AuthenticationService } from '../service/authentication.service';
 })
 export class LoginComponent implements OnInit {
 
+  
   user: User=new User
   invalidLogin = false;
-  public role=""
+  public role="";
+  userid:number=0;
   constructor(private router: Router,
     private loginservice: AuthenticationService) { }
 
   ngOnInit(): void {
-    
+    {state:{data:this.userid}}
   }
 
 
@@ -30,10 +32,11 @@ export class LoginComponent implements OnInit {
         console.log(response.token);
         // console.log(response.userid);
         // console.log(response.role);
+        this.userid=response.userid;
         let x=response.userid;
         console.log(x)
         if(response.role==='ROLE_USER')
-         this.router.navigate(['userhome'],{state:{data:response.userid}})
+         this.router.navigate(['usernavbar'],{state:{data:response.userid}})
         else window.location.href="/adminhome";
       },
       error=>{

@@ -1,12 +1,17 @@
+<body background="./assets/watercolor.webp">
 <br><br>
 <table >
     <tr>
+        <th>Coupon Id</th>
         <th>Coupon code</th>
         <th>Discount Amount</th>
     </tr>
     <tr *ngFor= "let u of discount; index as i" >
+        <td >{{u.couponid}}</td>
         <td >{{u.couponcode}}</td>
         <td>{{u.discountamount}}</td>
-        <td><button>update</button></td>
+        <td><button (click)="deleteById(u.couponid)">delete</button></td>
     </tr>
 </table>
+
+</body>

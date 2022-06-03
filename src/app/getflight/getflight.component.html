@@ -1,4 +1,6 @@
-flightid flightfrom, flightto, starttime,endtime, seats, price,status, airline:Airline
+<body background="./assets/watercolor.webp">
+    <div class="row">
+            <div class="container text-center mt">
 <br><br>
 <table >
     <tr>
@@ -23,6 +25,8 @@ flightid flightfrom, flightto, starttime,endtime, seats, price,status, airline:A
         <td>{{u.status}}</td>
         <!-- <td>{{u.status}}</td> -->
         <!-- <td>{{u.airlinefull}}</td> -->
-        <td><button>Edit</button></td>
+        <td><button (click)="deleteFlight(u.flightid)">Delete</button></td>
     </tr>
 </table>
+<button type="back" class="btn btn-dark"><a routerLink="/adminhome"  href="#">Back</a></button>
+</div></div></body>
