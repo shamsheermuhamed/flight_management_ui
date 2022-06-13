@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Flight } from '../Entity/flight';
 import { Ticket } from '../Entity/ticket';
+import { AuthenticationService } from '../service/authentication.service';
 import { FlightService } from '../service/flight.service';
 import { TicketService } from '../service/ticket.service';
 
@@ -16,7 +17,7 @@ export class GetticketComponent implements OnInit {
   tickets:Ticket[]=[]
   flights:Flight[]=[]
   constructor(private ticketSrvice:TicketService, private flightService:FlightService,
-      private router:Router) { }
+      private router:Router, private loginService:AuthenticationService) { }
 
   cancelTicket(ticketid:any)
   {
@@ -29,10 +30,7 @@ export class GetticketComponent implements OnInit {
   }
 
   ngOnInit(): void {
-
-    console.log(history.state);
-    this.ticket.userdetails = history.state.data;
-    
+    this.ticket.userdetails = Number(this.loginService.getUserId());
     const promise = this.ticketSrvice.getTicketById(this.ticket.userdetails);
     promise.subscribe((response) => {
       console.log(response);

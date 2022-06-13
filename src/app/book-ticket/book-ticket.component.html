@@ -56,8 +56,8 @@
                             (keyup.enter)="getcoupon(coupon.value)" />
                     </div>
                     <div class="a">
-                        <h6>Discount amount: {{discount}}</h6>
-                        <h5>GrandTotal {{ticket.totalprice}}</h5>
+                        <h6>Discount amount: {{discount | currency}}</h6>
+                        <h5>GrandTotal {{ticket.totalprice | currency}}</h5>
                     </div>
 
                     <br /><br />

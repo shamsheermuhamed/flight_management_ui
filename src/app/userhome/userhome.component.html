@@ -39,7 +39,7 @@
             <td>{{u.flightid}}</td>
             <td>{{u.starttime}}</td>
             <td>{{u.endtime}}</td>
-            <td>{{u.price}}</td>
+            <td>{{u.price | currency}}</td>
             <td><button mat-raised-button (click)="move(u.flightid)">Book Flight</button></td>
 
           </tr>

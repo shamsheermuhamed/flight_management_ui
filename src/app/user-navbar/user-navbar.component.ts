@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import User from '../Entity/user';
+import { AuthenticationService } from '../service/authentication.service';
 
 @Component({
   selector: 'app-user-navbar',
@@ -10,22 +11,13 @@ import User from '../Entity/user';
 export class UserNavbarComponent implements OnInit {
 
   user:User=new User;
-  constructor(private router:Router) { }
+  constructor() { }
 
   logged:boolean=false;
-
-  userHome(){
-    this.router.navigate(['usernavbar'],{state:{data:this.user.userid}})
-  }
-  bookTicket(){
-    this.router.navigate(['userhome'],{state:{data:this.user.userid}})
-  }
-  getticket(){
-    this.router.navigate(['getticket'],{state:{data:this.user.userid}})
-  }
+  islogged:boolean=true;
+  
   ngOnInit(): void {
-    console.log(history.state)
-    this.user.userid=history.state.data;
+    
   }
 
 }

@@ -19,6 +19,11 @@ export class AuthenticationService {
   loginUser(token:any){
     localStorage.setItem("token",token);
   }
+  loginUserId(userid:any)
+  {
+    localStorage.setItem('userid',userid)
+    console.log(localStorage.getItem("userid"))
+  }
   isLoggedin()
   {
     let token= localStorage.getItem("token");
@@ -33,10 +38,16 @@ export class AuthenticationService {
   logout()
   {
     localStorage.removeItem('token');
+    localStorage.removeItem('userid');
+    localStorage.removeItem('flightid');
     return true;
   }
   getToken(){
     return localStorage.getItem("token");
+  }
+  getUserId(){
+    console.log(localStorage.getItem("userid"))
+    return localStorage.getItem("userid");
   }
 
   signUp(user: {username:string,userpassword:string,useremail:string,role:string}) {

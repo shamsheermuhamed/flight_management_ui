@@ -15,6 +15,7 @@ export class LoginComponent implements OnInit {
   invalidLogin = false;
   public role="";
   userid:number=0;
+  y:number=0;
   constructor(private router: Router,
     private loginservice: AuthenticationService) { }
 
@@ -29,14 +30,13 @@ export class LoginComponent implements OnInit {
     this.loginservice.generateToken(credential).subscribe(
       (response:any)=>{
         this.loginservice.loginUser(response.token);
-        console.log(response.token);
-        // console.log(response.userid);
+        this.loginservice.loginUserId(response.userid);
         // console.log(response.role);
         this.userid=response.userid;
         let x=response.userid;
         console.log(x)
         if(response.role==='ROLE_USER')
-         this.router.navigate(['usernavbar'],{state:{data:response.userid}})
+            window.location.href="/usernavbar";
         else window.location.href="/adminhome";
       },
       error=>{

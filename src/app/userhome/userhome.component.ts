@@ -2,6 +2,7 @@ import { Component, Input, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Flight } from '../Entity/flight';
 import User from '../Entity/user';
+import { AuthenticationService } from '../service/authentication.service';
 import { FlightService } from '../service/flight.service';
 
 @Component({
@@ -17,13 +18,14 @@ export class UserhomeComponent implements OnInit {
   flight:Flight[]=[];
   user:User=new User
   constructor(private flightService:FlightService,private router:Router, 
-    private route:ActivatedRoute) { }
+    private route:ActivatedRoute,private loginService:AuthenticationService) { }
 
   save()
   {
       this.flightService.getFlightsbyPlace(this.cred).subscribe(
-        response=>{
+        (response:any)=>{
           console.log(response);
+          // console.log(response.flightid)
           this.isreceive=true;
           if(this.isreceive==true) {this.load(response);}
         }
@@ -33,14 +35,14 @@ export class UserhomeComponent implements OnInit {
   {
      this.flight = response as Flight[]; 
   }
-  move(flightId:any)
+  move(flightid:any)
   {
-    this.router.navigate(['bookticket'],{state:{flightdata:flightId,data:this.user.userid}})
+    localStorage.setItem("flightid",flightid)
+    this.router.navigate(['bookticket'])
     
   }
   ngOnInit(): void {
-    console.log(history.state)
-    this.user.userid=history.state.data;
+    
   }
 
 }

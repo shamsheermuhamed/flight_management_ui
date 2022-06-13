@@ -2,22 +2,30 @@
     <div class="row">
         <div class="card col-md-4 offset-md-4 shadow-lg p-3 mb-5 bg-white">
             <div class="container text-center mt">
-<h4>Add Discount</h4>
-<form #couponform="ngForm" >
-<div class="input-group input-group-sm mb-3">
-    <label for="couponcode" class="control-label">Coupon code</label>
-    <input required #couponcode="ngModel" type="text" size="42" [(ngModel)]="discount.couponcode" name="couponcode"/>
-    <div *ngIf="couponcode.invalid && couponcode.touched" class="alert alert-danger">Coupon code is required</div>
-</div>
-<div class="input-group input-group-sm mb-3">
-    <label for="discountamount" class="control-label">Discount Amount</label>
-    <input required #discountamount="ngModel" type="text"  size="42" [(ngModel)]="discount.discountamount" name="discountamount"/>
-    <div *ngIf="discountamount.invalid && discountamount.touched" class="alert alert-danger">Discount amount is required</div>
-</div>
+                <h4>Add Discount</h4>
+                <form #couponform="ngForm">
+                    <div class="input-group input-group-sm mb-3">
+                        <label for="couponcode" class="control-label">Coupon code</label>
+                        <input required #couponcode="ngModel" type="text" size="42" [(ngModel)]="discount.couponcode"
+                            name="couponcode" />
+                        <div *ngIf="couponcode.invalid && couponcode.touched" class="alert alert-danger">Coupon code is
+                            required</div>
+                    </div>
+                    <div class="input-group input-group-sm mb-3">
+                        <label for="discountamount" class="control-label">Discount Amount</label>
+                        <input required #discountamount="ngModel" type="text" size="42"
+                            [(ngModel)]="discount.discountamount" name="discountamount" />
+                        <div *ngIf="discountamount.invalid && discountamount.touched" class="alert alert-danger">
+                            Discount amount is required</div>
+                    </div>
 
-<br/><br/>
-<button type="submit" [disabled]="!couponform.form.valid"  (click)="save()"  class="btn btn-dark">Submit</button>
-<button type="back" class="btn btn-dark"><a routerLink="/adminhome"  href="#">Back</a></button>
-</form> 
+                    <br /><br />
+                    <button type="submit" [disabled]="!couponform.form.valid" (click)="save()"
+                        class="btn btn-dark">Submit</button>
+                    <button type="back" class="btn btn-dark"><a routerLink="/adminhome" href="#">Back</a></button>
+                </form>
 
-</div></div></div></body>
+            </div>
+        </div>
+    </div>
+</body>

@@ -29,7 +29,7 @@ const routes: Routes = [
   {path:"getdiscount",component:GetdiscountComponent},
   {path:"adddiscount",component:AddDiscountComponent},
   {path:"addflight",component:AddFlightComponent},
-  {path:"getflight",component:GetflightComponent},
+  {path:"getflight",component:GetflightComponent,canActivate:[AuthGuard]},
   {path:"bookticket",component:BookTicketComponent},
   {path:"editticket",component:UpdateTicketComponent},
   {path:"getticket",component:GetticketComponent}
